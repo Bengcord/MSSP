@@ -1,5 +1,3 @@
-@echo off
-COLOR 0b
 SET Server=你的服务器核心名.jar
 
 SET SetX=4096
@@ -44,3 +42,12 @@ java -Xmx%SetX%M -Xms%SetS%M -Xmn%SetNq%M %SetCs% %SetEw% -jar %Server%.jar nogu
 @echo. 
 @echo. ---------------------------------------------------------------
 @echo.
+@echo.                            服务器已关闭
+@echo.                      服务器将在十秒后自动重启
+@echo.                          已重启次数：%a%
+@echo. 
+@echo. ---------------------------------------------------------------
+@echo. 
+ping -n 10 127.1>nul
+set /a a+=1
+goto head
